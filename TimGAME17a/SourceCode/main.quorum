@@ -1,0 +1,38 @@
+use Libraries.Game.Game
+use Libraries.Game.Graphics.Drawable
+use Libraries.Game.Graphics.Color
+
+class Main is Game
+    //Drawable rectangle
+    Drawable bunny
+    Color color
+
+    action Main
+        StartGame()
+        
+    end
+
+    action CreateGame
+    bunny:Load("hourofcode.png")
+    Add(bunny)
+    bunny:SetX(32)
+    bunny:SetY(16)
+
+
+//    Add(rectangle)
+//    rectangle:LoadFilledRectangle(50, 50)
+//    rectangle:SetColor(color:Green())
+//    Add(rectangle)
+//    rectangle: SetPosition(300,300)  
+//    rectangle:LoadFilledRectangle(200, 250)
+//    rectangle:SetColor(color:Red())
+
+
+    end
+
+    action Update(number seconds)
+        number newX = bunny:GetX() + 256 * seconds
+        number newY = bunny:GetY() + 128 * seconds
+        bunny:SetPosition(newX, newY)
+    end
+end
